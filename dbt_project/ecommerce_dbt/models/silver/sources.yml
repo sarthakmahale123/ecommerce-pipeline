@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: bronze
+    schema: bronze
+    tables:
+      - name: products_raw
+        description: "Raw product data from dummyjson API"
+      - name: carts_raw
+        description: "Raw cart data from dummyjson API"
+      - name: users_raw
+        description: "Raw user data from dummyjson API"
