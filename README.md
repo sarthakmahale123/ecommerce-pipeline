@@ -274,4 +274,4 @@ Bronze is your audit trail — complete and immutable. Silver is what analysts a
 
 **Sarthak Mahale**  
 Data Engineering Portfolio Project  
-[LinkedIn](https://linkedin.com/in/YOUR_PROFILE) · [GitHub](https://github.com/YOUR_USERNAME)
+[LinkedIn](https://www.linkedin.com/in/sarthak-mahale-626635267/) · [GitHub](https://github.com/sarthakmahale123)
