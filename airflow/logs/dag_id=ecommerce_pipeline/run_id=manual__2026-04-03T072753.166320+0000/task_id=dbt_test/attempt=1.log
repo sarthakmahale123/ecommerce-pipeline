@@ -1,0 +1,104 @@
+[2026-04-03T07:31:21.003+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ecommerce_pipeline.dbt_test manual__2026-04-03T07:27:53.166320+00:00 [queued]>
+[2026-04-03T07:31:21.013+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ecommerce_pipeline.dbt_test manual__2026-04-03T07:27:53.166320+00:00 [queued]>
+[2026-04-03T07:31:21.014+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2026-04-03T07:31:21.028+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): dbt_test> on 2026-04-03 07:27:53.166320+00:00
+[2026-04-03T07:31:21.034+0000] {standard_task_runner.py:60} INFO - Started process 975 to run task
+[2026-04-03T07:31:21.038+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ecommerce_pipeline', 'dbt_test', 'manual__2026-04-03T07:27:53.166320+00:00', '--job-id', '46', '--raw', '--subdir', 'DAGS_FOLDER/ecommerce_pipeline.py', '--cfg-path', '/tmp/tmp43d5v8k_']
+[2026-04-03T07:31:21.040+0000] {standard_task_runner.py:88} INFO - Job 46: Subtask dbt_test
+[2026-04-03T07:31:21.115+0000] {task_command.py:423} INFO - Running <TaskInstance: ecommerce_pipeline.dbt_test manual__2026-04-03T07:27:53.166320+00:00 [running]> on host e90da0356264
+[2026-04-03T07:31:21.189+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data-engineering' AIRFLOW_CTX_DAG_ID='ecommerce_pipeline' AIRFLOW_CTX_TASK_ID='dbt_test' AIRFLOW_CTX_EXECUTION_DATE='2026-04-03T07:27:53.166320+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-04-03T07:27:53.166320+00:00'
+[2026-04-03T07:31:21.191+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-04-03T07:31:21.192+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/project/dbt_project/ecommerce_dbt && dbt test --profiles-dir /opt/***/project/dbt_project']
+[2026-04-03T07:31:21.201+0000] {subprocess.py:86} INFO - Output:
+[2026-04-03T07:31:22.823+0000] {subprocess.py:93} INFO - [0m07:31:22  Running with dbt=1.11.7
+[2026-04-03T07:31:23.138+0000] {subprocess.py:93} INFO - [0m07:31:23  Registered adapter: duckdb=1.8.4
+[2026-04-03T07:31:24.041+0000] {subprocess.py:93} INFO - [0m07:31:24  Found 8 models, 38 data tests, 8 sources, 457 macros
+[2026-04-03T07:31:24.050+0000] {subprocess.py:93} INFO - [0m07:31:24
+[2026-04-03T07:31:24.052+0000] {subprocess.py:93} INFO - [0m07:31:24  Concurrency: 1 threads (target='dev')
+[2026-04-03T07:31:24.054+0000] {subprocess.py:93} INFO - [0m07:31:24
+[2026-04-03T07:31:24.300+0000] {subprocess.py:93} INFO - [0m07:31:24  1 of 38 START test accepted_values_dim_products_availability_status__In_Stock__Low_Stock__Out_of_Stock  [RUN]
+[2026-04-03T07:31:24.468+0000] {subprocess.py:93} INFO - [0m07:31:24  1 of 38 PASS accepted_values_dim_products_availability_status__In_Stock__Low_Stock__Out_of_Stock  [[32mPASS[0m in 0.17s]
+[2026-04-03T07:31:24.475+0000] {subprocess.py:93} INFO - [0m07:31:24  2 of 38 START test accepted_values_dim_users_gender__male__female .............. [RUN]
+[2026-04-03T07:31:24.650+0000] {subprocess.py:93} INFO - [0m07:31:24  2 of 38 PASS accepted_values_dim_users_gender__male__female .................... [[32mPASS[0m in 0.17s]
+[2026-04-03T07:31:24.655+0000] {subprocess.py:93} INFO - [0m07:31:24  3 of 38 START test accepted_values_product_reviews_rating__1__2__3__4__5 ....... [RUN]
+[2026-04-03T07:31:24.786+0000] {subprocess.py:93} INFO - [0m07:31:24  3 of 38 PASS accepted_values_product_reviews_rating__1__2__3__4__5 ............. [[32mPASS[0m in 0.13s]
+[2026-04-03T07:31:24.792+0000] {subprocess.py:93} INFO - [0m07:31:24  4 of 38 START test assert_cart_totals_are_positive ............................. [RUN]
+[2026-04-03T07:31:24.939+0000] {subprocess.py:93} INFO - [0m07:31:24  4 of 38 PASS assert_cart_totals_are_positive ................................... [[32mPASS[0m in 0.15s]
+[2026-04-03T07:31:24.945+0000] {subprocess.py:93} INFO - [0m07:31:24  5 of 38 START test assert_discounted_price_less_than_price ..................... [RUN]
+[2026-04-03T07:31:25.063+0000] {subprocess.py:93} INFO - [0m07:31:25  5 of 38 PASS assert_discounted_price_less_than_price ........................... [[32mPASS[0m in 0.12s]
+[2026-04-03T07:31:25.069+0000] {subprocess.py:93} INFO - [0m07:31:25  6 of 38 START test assert_discounted_total_less_than_total ..................... [RUN]
+[2026-04-03T07:31:25.192+0000] {subprocess.py:93} INFO - [0m07:31:25  6 of 38 PASS assert_discounted_total_less_than_total ........................... [[32mPASS[0m in 0.12s]
+[2026-04-03T07:31:25.197+0000] {subprocess.py:93} INFO - [0m07:31:25  7 of 38 START test assert_gold_revenue_not_negative ............................ [RUN]
+[2026-04-03T07:31:25.305+0000] {subprocess.py:93} INFO - [0m07:31:25  7 of 38 PASS assert_gold_revenue_not_negative .................................. [[32mPASS[0m in 0.11s]
+[2026-04-03T07:31:25.310+0000] {subprocess.py:93} INFO - [0m07:31:25  8 of 38 START test assert_line_total_matches_price_x_qty ....................... [RUN]
+[2026-04-03T07:31:25.447+0000] {subprocess.py:93} INFO - [0m07:31:25  8 of 38 PASS assert_line_total_matches_price_x_qty ............................. [[32mPASS[0m in 0.13s]
+[2026-04-03T07:31:25.453+0000] {subprocess.py:93} INFO - [0m07:31:25  9 of 38 START test assert_review_ratings_in_range .............................. [RUN]
+[2026-04-03T07:31:25.586+0000] {subprocess.py:93} INFO - [0m07:31:25  9 of 38 PASS assert_review_ratings_in_range .................................... [[32mPASS[0m in 0.13s]
+[2026-04-03T07:31:25.591+0000] {subprocess.py:93} INFO - [0m07:31:25  10 of 38 START test not_null_category_performance_category ..................... [RUN]
+[2026-04-03T07:31:25.729+0000] {subprocess.py:93} INFO - [0m07:31:25  10 of 38 PASS not_null_category_performance_category ........................... [[32mPASS[0m in 0.14s]
+[2026-04-03T07:31:25.735+0000] {subprocess.py:93} INFO - [0m07:31:25  11 of 38 START test not_null_category_performance_net_revenue .................. [RUN]
+[2026-04-03T07:31:25.850+0000] {subprocess.py:93} INFO - [0m07:31:25  11 of 38 PASS not_null_category_performance_net_revenue ........................ [[32mPASS[0m in 0.11s]
+[2026-04-03T07:31:25.856+0000] {subprocess.py:93} INFO - [0m07:31:25  12 of 38 START test not_null_daily_revenue_gross_revenue ....................... [RUN]
+[2026-04-03T07:31:26.016+0000] {subprocess.py:93} INFO - [0m07:31:26  12 of 38 PASS not_null_daily_revenue_gross_revenue ............................. [[32mPASS[0m in 0.16s]
+[2026-04-03T07:31:26.022+0000] {subprocess.py:93} INFO - [0m07:31:26  13 of 38 START test not_null_daily_revenue_net_revenue ......................... [RUN]
+[2026-04-03T07:31:26.143+0000] {subprocess.py:93} INFO - [0m07:31:26  13 of 38 PASS not_null_daily_revenue_net_revenue ............................... [[32mPASS[0m in 0.12s]
+[2026-04-03T07:31:26.148+0000] {subprocess.py:93} INFO - [0m07:31:26  14 of 38 START test not_null_daily_revenue_revenue_date ........................ [RUN]
+[2026-04-03T07:31:26.264+0000] {subprocess.py:93} INFO - [0m07:31:26  14 of 38 PASS not_null_daily_revenue_revenue_date .............................. [[32mPASS[0m in 0.11s]
+[2026-04-03T07:31:26.270+0000] {subprocess.py:93} INFO - [0m07:31:26  15 of 38 START test not_null_dim_products_category ............................. [RUN]
+[2026-04-03T07:31:26.399+0000] {subprocess.py:93} INFO - [0m07:31:26  15 of 38 PASS not_null_dim_products_category ................................... [[32mPASS[0m in 0.13s]
+[2026-04-03T07:31:26.405+0000] {subprocess.py:93} INFO - [0m07:31:26  16 of 38 START test not_null_dim_products_price ................................ [RUN]
+[2026-04-03T07:31:26.560+0000] {subprocess.py:93} INFO - [0m07:31:26  16 of 38 PASS not_null_dim_products_price ...................................... [[32mPASS[0m in 0.15s]
+[2026-04-03T07:31:26.567+0000] {subprocess.py:93} INFO - [0m07:31:26  17 of 38 START test not_null_dim_products_product_id ........................... [RUN]
+[2026-04-03T07:31:26.714+0000] {subprocess.py:93} INFO - [0m07:31:26  17 of 38 PASS not_null_dim_products_product_id ................................. [[32mPASS[0m in 0.14s]
+[2026-04-03T07:31:26.720+0000] {subprocess.py:93} INFO - [0m07:31:26  18 of 38 START test not_null_dim_products_title ................................ [RUN]
+[2026-04-03T07:31:26.839+0000] {subprocess.py:93} INFO - [0m07:31:26  18 of 38 PASS not_null_dim_products_title ...................................... [[32mPASS[0m in 0.12s]
+[2026-04-03T07:31:26.846+0000] {subprocess.py:93} INFO - [0m07:31:26  19 of 38 START test not_null_dim_users_email ................................... [RUN]
+[2026-04-03T07:31:26.959+0000] {subprocess.py:93} INFO - [0m07:31:26  19 of 38 PASS not_null_dim_users_email ......................................... [[32mPASS[0m in 0.11s]
+[2026-04-03T07:31:26.965+0000] {subprocess.py:93} INFO - [0m07:31:26  20 of 38 START test not_null_dim_users_user_id ................................. [RUN]
+[2026-04-03T07:31:27.089+0000] {subprocess.py:93} INFO - [0m07:31:27  20 of 38 PASS not_null_dim_users_user_id ....................................... [[32mPASS[0m in 0.12s]
+[2026-04-03T07:31:27.096+0000] {subprocess.py:93} INFO - [0m07:31:27  21 of 38 START test not_null_fct_cart_items_cart_id ............................ [RUN]
+[2026-04-03T07:31:27.236+0000] {subprocess.py:93} INFO - [0m07:31:27  21 of 38 PASS not_null_fct_cart_items_cart_id .................................. [[32mPASS[0m in 0.14s]
+[2026-04-03T07:31:27.243+0000] {subprocess.py:93} INFO - [0m07:31:27  22 of 38 START test not_null_fct_cart_items_product_id ......................... [RUN]
+[2026-04-03T07:31:27.379+0000] {subprocess.py:93} INFO - [0m07:31:27  22 of 38 PASS not_null_fct_cart_items_product_id ............................... [[32mPASS[0m in 0.13s]
+[2026-04-03T07:31:27.385+0000] {subprocess.py:93} INFO - [0m07:31:27  23 of 38 START test not_null_fct_cart_items_quantity ........................... [RUN]
+[2026-04-03T07:31:27.523+0000] {subprocess.py:93} INFO - [0m07:31:27  23 of 38 PASS not_null_fct_cart_items_quantity ................................. [[32mPASS[0m in 0.14s]
+[2026-04-03T07:31:27.530+0000] {subprocess.py:93} INFO - [0m07:31:27  24 of 38 START test not_null_fct_carts_cart_id ................................. [RUN]
+[2026-04-03T07:31:27.668+0000] {subprocess.py:93} INFO - [0m07:31:27  24 of 38 PASS not_null_fct_carts_cart_id ....................................... [[32mPASS[0m in 0.14s]
+[2026-04-03T07:31:27.675+0000] {subprocess.py:93} INFO - [0m07:31:27  25 of 38 START test not_null_fct_carts_total ................................... [RUN]
+[2026-04-03T07:31:27.807+0000] {subprocess.py:93} INFO - [0m07:31:27  25 of 38 PASS not_null_fct_carts_total ......................................... [[32mPASS[0m in 0.13s]
+[2026-04-03T07:31:27.814+0000] {subprocess.py:93} INFO - [0m07:31:27  26 of 38 START test not_null_fct_carts_user_id ................................. [RUN]
+[2026-04-03T07:31:27.947+0000] {subprocess.py:93} INFO - [0m07:31:27  26 of 38 PASS not_null_fct_carts_user_id ....................................... [[32mPASS[0m in 0.13s]
+[2026-04-03T07:31:27.953+0000] {subprocess.py:93} INFO - [0m07:31:27  27 of 38 START test not_null_product_reviews_product_id ........................ [RUN]
+[2026-04-03T07:31:28.094+0000] {subprocess.py:93} INFO - [0m07:31:28  27 of 38 PASS not_null_product_reviews_product_id .............................. [[32mPASS[0m in 0.14s]
+[2026-04-03T07:31:28.101+0000] {subprocess.py:93} INFO - [0m07:31:28  28 of 38 START test not_null_product_reviews_rating ............................ [RUN]
+[2026-04-03T07:31:28.251+0000] {subprocess.py:93} INFO - [0m07:31:28  28 of 38 PASS not_null_product_reviews_rating .................................. [[32mPASS[0m in 0.15s]
+[2026-04-03T07:31:28.257+0000] {subprocess.py:93} INFO - [0m07:31:28  29 of 38 START test not_null_product_reviews_reviewer_name ..................... [RUN]
+[2026-04-03T07:31:28.410+0000] {subprocess.py:93} INFO - [0m07:31:28  29 of 38 PASS not_null_product_reviews_reviewer_name ........................... [[32mPASS[0m in 0.15s]
+[2026-04-03T07:31:28.418+0000] {subprocess.py:93} INFO - [0m07:31:28  30 of 38 START test not_null_top_products_net_revenue .......................... [RUN]
+[2026-04-03T07:31:28.556+0000] {subprocess.py:93} INFO - [0m07:31:28  30 of 38 PASS not_null_top_products_net_revenue ................................ [[32mPASS[0m in 0.14s]
+[2026-04-03T07:31:28.562+0000] {subprocess.py:93} INFO - [0m07:31:28  31 of 38 START test not_null_top_products_product_id ........................... [RUN]
+[2026-04-03T07:31:28.701+0000] {subprocess.py:93} INFO - [0m07:31:28  31 of 38 PASS not_null_top_products_product_id ................................. [[32mPASS[0m in 0.14s]
+[2026-04-03T07:31:28.707+0000] {subprocess.py:93} INFO - [0m07:31:28  32 of 38 START test unique_category_performance_category ....................... [RUN]
+[2026-04-03T07:31:28.848+0000] {subprocess.py:93} INFO - [0m07:31:28  32 of 38 PASS unique_category_performance_category ............................. [[32mPASS[0m in 0.14s]
+[2026-04-03T07:31:28.854+0000] {subprocess.py:93} INFO - [0m07:31:28  33 of 38 START test unique_daily_revenue_revenue_date .......................... [RUN]
+[2026-04-03T07:31:28.996+0000] {subprocess.py:93} INFO - [0m07:31:28  33 of 38 PASS unique_daily_revenue_revenue_date ................................ [[32mPASS[0m in 0.14s]
+[2026-04-03T07:31:29.003+0000] {subprocess.py:93} INFO - [0m07:31:29  34 of 38 START test unique_dim_products_product_id ............................. [RUN]
+[2026-04-03T07:31:29.132+0000] {subprocess.py:93} INFO - [0m07:31:29  34 of 38 PASS unique_dim_products_product_id ................................... [[32mPASS[0m in 0.13s]
+[2026-04-03T07:31:29.137+0000] {subprocess.py:93} INFO - [0m07:31:29  35 of 38 START test unique_dim_users_email ..................................... [RUN]
+[2026-04-03T07:31:29.299+0000] {subprocess.py:93} INFO - [0m07:31:29  35 of 38 PASS unique_dim_users_email ........................................... [[32mPASS[0m in 0.16s]
+[2026-04-03T07:31:29.305+0000] {subprocess.py:93} INFO - [0m07:31:29  36 of 38 START test unique_dim_users_user_id ................................... [RUN]
+[2026-04-03T07:31:29.432+0000] {subprocess.py:93} INFO - [0m07:31:29  36 of 38 PASS unique_dim_users_user_id ......................................... [[32mPASS[0m in 0.12s]
+[2026-04-03T07:31:29.439+0000] {subprocess.py:93} INFO - [0m07:31:29  37 of 38 START test unique_fct_carts_cart_id ................................... [RUN]
+[2026-04-03T07:31:29.607+0000] {subprocess.py:93} INFO - [0m07:31:29  37 of 38 PASS unique_fct_carts_cart_id ......................................... [[32mPASS[0m in 0.17s]
+[2026-04-03T07:31:29.613+0000] {subprocess.py:93} INFO - [0m07:31:29  38 of 38 START test unique_top_products_product_id ............................. [RUN]
+[2026-04-03T07:31:29.766+0000] {subprocess.py:93} INFO - [0m07:31:29  38 of 38 PASS unique_top_products_product_id ................................... [[32mPASS[0m in 0.15s]
+[2026-04-03T07:31:29.858+0000] {subprocess.py:93} INFO - [0m07:31:29
+[2026-04-03T07:31:29.860+0000] {subprocess.py:93} INFO - [0m07:31:29  Finished running 38 data tests in 0 hours 0 minutes and 5.80 seconds (5.80s).
+[2026-04-03T07:31:30.004+0000] {subprocess.py:93} INFO - [0m07:31:30
+[2026-04-03T07:31:30.010+0000] {subprocess.py:93} INFO - [0m07:31:30  [32mCompleted successfully[0m
+[2026-04-03T07:31:30.016+0000] {subprocess.py:93} INFO - [0m07:31:30
+[2026-04-03T07:31:30.019+0000] {subprocess.py:93} INFO - [0m07:31:30  Done. PASS=38 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=38
+[2026-04-03T07:31:31.551+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-04-03T07:31:31.581+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=ecommerce_pipeline, task_id=dbt_test, execution_date=20260403T072753, start_date=20260403T073121, end_date=20260403T073131
+[2026-04-03T07:31:31.624+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-04-03T07:31:31.643+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

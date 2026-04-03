@@ -1,0 +1,34 @@
+[2026-04-03T07:31:14.474+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ecommerce_pipeline.dbt_run_gold manual__2026-04-03T07:27:53.166320+00:00 [queued]>
+[2026-04-03T07:31:14.482+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ecommerce_pipeline.dbt_run_gold manual__2026-04-03T07:27:53.166320+00:00 [queued]>
+[2026-04-03T07:31:14.483+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2026-04-03T07:31:14.494+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): dbt_run_gold> on 2026-04-03 07:27:53.166320+00:00
+[2026-04-03T07:31:14.498+0000] {standard_task_runner.py:60} INFO - Started process 894 to run task
+[2026-04-03T07:31:14.502+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ecommerce_pipeline', 'dbt_run_gold', 'manual__2026-04-03T07:27:53.166320+00:00', '--job-id', '45', '--raw', '--subdir', 'DAGS_FOLDER/ecommerce_pipeline.py', '--cfg-path', '/tmp/tmpiex78r91']
+[2026-04-03T07:31:14.504+0000] {standard_task_runner.py:88} INFO - Job 45: Subtask dbt_run_gold
+[2026-04-03T07:31:14.559+0000] {task_command.py:423} INFO - Running <TaskInstance: ecommerce_pipeline.dbt_run_gold manual__2026-04-03T07:27:53.166320+00:00 [running]> on host e90da0356264
+[2026-04-03T07:31:14.635+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data-engineering' AIRFLOW_CTX_DAG_ID='ecommerce_pipeline' AIRFLOW_CTX_TASK_ID='dbt_run_gold' AIRFLOW_CTX_EXECUTION_DATE='2026-04-03T07:27:53.166320+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-04-03T07:27:53.166320+00:00'
+[2026-04-03T07:31:14.637+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-04-03T07:31:14.638+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/project/dbt_project/ecommerce_dbt && dbt run --select gold --profiles-dir /opt/***/project/dbt_project']
+[2026-04-03T07:31:14.647+0000] {subprocess.py:86} INFO - Output:
+[2026-04-03T07:31:16.283+0000] {subprocess.py:93} INFO - [0m07:31:16  Running with dbt=1.11.7
+[2026-04-03T07:31:16.578+0000] {subprocess.py:93} INFO - [0m07:31:16  Registered adapter: duckdb=1.8.4
+[2026-04-03T07:31:17.340+0000] {subprocess.py:93} INFO - [0m07:31:17  Found 8 models, 38 data tests, 8 sources, 457 macros
+[2026-04-03T07:31:17.346+0000] {subprocess.py:93} INFO - [0m07:31:17
+[2026-04-03T07:31:17.348+0000] {subprocess.py:93} INFO - [0m07:31:17  Concurrency: 1 threads (target='dev')
+[2026-04-03T07:31:17.350+0000] {subprocess.py:93} INFO - [0m07:31:17
+[2026-04-03T07:31:17.832+0000] {subprocess.py:93} INFO - [0m07:31:17  1 of 3 START sql table model gold.category_performance ......................... [RUN]
+[2026-04-03T07:31:18.124+0000] {subprocess.py:93} INFO - [0m07:31:18  1 of 3 OK created sql table model gold.category_performance .................... [[32mOK[0m in 0.29s]
+[2026-04-03T07:31:18.130+0000] {subprocess.py:93} INFO - [0m07:31:18  2 of 3 START sql table model gold.daily_revenue ................................ [RUN]
+[2026-04-03T07:31:18.319+0000] {subprocess.py:93} INFO - [0m07:31:18  2 of 3 OK created sql table model gold.daily_revenue ........................... [[32mOK[0m in 0.19s]
+[2026-04-03T07:31:18.325+0000] {subprocess.py:93} INFO - [0m07:31:18  3 of 3 START sql table model gold.top_products ................................. [RUN]
+[2026-04-03T07:31:18.530+0000] {subprocess.py:93} INFO - [0m07:31:18  3 of 3 OK created sql table model gold.top_products ............................ [[32mOK[0m in 0.20s]
+[2026-04-03T07:31:18.601+0000] {subprocess.py:93} INFO - [0m07:31:18
+[2026-04-03T07:31:18.603+0000] {subprocess.py:93} INFO - [0m07:31:18  Finished running 3 table models in 0 hours 0 minutes and 1.25 seconds (1.25s).
+[2026-04-03T07:31:18.691+0000] {subprocess.py:93} INFO - [0m07:31:18
+[2026-04-03T07:31:18.693+0000] {subprocess.py:93} INFO - [0m07:31:18  [32mCompleted successfully[0m
+[2026-04-03T07:31:18.695+0000] {subprocess.py:93} INFO - [0m07:31:18
+[2026-04-03T07:31:18.697+0000] {subprocess.py:93} INFO - [0m07:31:18  Done. PASS=3 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=3
+[2026-04-03T07:31:20.324+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-04-03T07:31:20.360+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=ecommerce_pipeline, task_id=dbt_run_gold, execution_date=20260403T072753, start_date=20260403T073114, end_date=20260403T073120
+[2026-04-03T07:31:20.391+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-04-03T07:31:20.419+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

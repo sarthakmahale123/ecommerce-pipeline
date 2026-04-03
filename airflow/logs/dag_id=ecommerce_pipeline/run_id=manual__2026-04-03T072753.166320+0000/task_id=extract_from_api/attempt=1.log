@@ -1,0 +1,36 @@
+[2026-04-03T07:27:55.324+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ecommerce_pipeline.extract_from_api manual__2026-04-03T07:27:53.166320+00:00 [queued]>
+[2026-04-03T07:27:55.342+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ecommerce_pipeline.extract_from_api manual__2026-04-03T07:27:53.166320+00:00 [queued]>
+[2026-04-03T07:27:55.343+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2026-04-03T07:27:55.369+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): extract_from_api> on 2026-04-03 07:27:53.166320+00:00
+[2026-04-03T07:27:55.377+0000] {standard_task_runner.py:60} INFO - Started process 208 to run task
+[2026-04-03T07:27:55.384+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ecommerce_pipeline', 'extract_from_api', 'manual__2026-04-03T07:27:53.166320+00:00', '--job-id', '36', '--raw', '--subdir', 'DAGS_FOLDER/ecommerce_pipeline.py', '--cfg-path', '/tmp/tmpqchj3yty']
+[2026-04-03T07:27:55.389+0000] {standard_task_runner.py:88} INFO - Job 36: Subtask extract_from_api
+[2026-04-03T07:27:55.549+0000] {task_command.py:423} INFO - Running <TaskInstance: ecommerce_pipeline.extract_from_api manual__2026-04-03T07:27:53.166320+00:00 [running]> on host e90da0356264
+[2026-04-03T07:27:55.718+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data-engineering' AIRFLOW_CTX_DAG_ID='ecommerce_pipeline' AIRFLOW_CTX_TASK_ID='extract_from_api' AIRFLOW_CTX_EXECUTION_DATE='2026-04-03T07:27:53.166320+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-04-03T07:27:53.166320+00:00'
+[2026-04-03T07:27:55.745+0000] {logging_mixin.py:188} INFO - 
+Ingestion run: 20260403T072755Z
+[2026-04-03T07:27:55.746+0000] {logging_mixin.py:188} INFO - 
+Fetching: products
+[2026-04-03T07:27:56.405+0000] {logging_mixin.py:188} INFO -   Fetched 100/194 from /products
+[2026-04-03T07:27:57.017+0000] {logging_mixin.py:188} INFO -   Fetched 194/194 from /products
+[2026-04-03T07:27:57.049+0000] {logging_mixin.py:188} INFO -   Saved 194 records → data/raw/products_20260403T072755Z.json
+[2026-04-03T07:27:57.050+0000] {logging_mixin.py:188} INFO - 
+Fetching: carts
+[2026-04-03T07:27:57.457+0000] {logging_mixin.py:188} INFO -   Fetched 50/50 from /carts
+[2026-04-03T07:27:57.497+0000] {logging_mixin.py:188} INFO -   Saved 50 records → data/raw/carts_20260403T072755Z.json
+[2026-04-03T07:27:57.498+0000] {logging_mixin.py:188} INFO - 
+Fetching: users
+[2026-04-03T07:27:58.223+0000] {logging_mixin.py:188} INFO -   Fetched 100/208 from /users
+[2026-04-03T07:27:58.976+0000] {logging_mixin.py:188} INFO -   Fetched 200/208 from /users
+[2026-04-03T07:27:59.377+0000] {logging_mixin.py:188} INFO -   Fetched 208/208 from /users
+[2026-04-03T07:27:59.447+0000] {logging_mixin.py:188} INFO -   Saved 208 records → data/raw/users_20260403T072755Z.json
+[2026-04-03T07:27:59.449+0000] {logging_mixin.py:188} INFO - 
+--- Ingestion summary ---
+[2026-04-03T07:27:59.450+0000] {logging_mixin.py:188} INFO -   products: {'count': 194, 'file': 'data/raw/products_20260403T072755Z.json'}
+[2026-04-03T07:27:59.450+0000] {logging_mixin.py:188} INFO -   carts: {'count': 50, 'file': 'data/raw/carts_20260403T072755Z.json'}
+[2026-04-03T07:27:59.451+0000] {logging_mixin.py:188} INFO -   users: {'count': 208, 'file': 'data/raw/users_20260403T072755Z.json'}
+[2026-04-03T07:27:59.474+0000] {logging_mixin.py:188} INFO - Extracted: {'products': {'count': 194, 'file': 'data/raw/products_20260403T072755Z.json'}, 'carts': {'count': 50, 'file': 'data/raw/carts_20260403T072755Z.json'}, 'users': {'count': 208, 'file': 'data/raw/users_20260403T072755Z.json'}}
+[2026-04-03T07:27:59.475+0000] {python.py:201} INFO - Done. Returned value was: None
+[2026-04-03T07:27:59.491+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=ecommerce_pipeline, task_id=extract_from_api, execution_date=20260403T072753, start_date=20260403T072755, end_date=20260403T072759
+[2026-04-03T07:27:59.553+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-04-03T07:27:59.602+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
