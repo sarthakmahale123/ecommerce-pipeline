@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: silver
+    schema: silver
+    tables:
+      - name: dim_products
+      - name: dim_users
+      - name: fct_carts
+      - name: fct_cart_items
+      - name: product_reviews
