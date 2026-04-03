@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: daily_revenue
+    description: Daily revenue aggregation
+    columns:
+      - name: revenue_date
+        tests:
+          - unique
+          - not_null
+      - name: gross_revenue
+        tests:
+          - not_null
+      - name: net_revenue
+        tests:
+          - not_null
+
+  - name: top_products
+    description: Revenue metrics per product
+    columns:
+      - name: product_id
+        tests:
+          - unique
+          - not_null
+      - name: net_revenue
+        tests:
+          - not_null
+
+  - name: category_performance
+    description: Revenue metrics per category
+    columns:
+      - name: category
+        tests:
+          - unique
+          - not_null
+      - name: net_revenue
+        tests:
+          - not_null

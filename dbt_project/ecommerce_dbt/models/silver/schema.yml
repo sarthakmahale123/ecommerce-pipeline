@@ -1,0 +1,81 @@
+version: 2
+
+models:
+  - name: dim_products
+    description: Cleaned product dimension table
+    columns:
+      - name: product_id
+        tests:
+          - unique
+          - not_null
+      - name: title
+        tests:
+          - not_null
+      - name: price
+        tests:
+          - not_null
+      - name: category
+        tests:
+          - not_null
+      - name: availability_status
+        tests:
+          - accepted_values:
+              values: ['In Stock', 'Low Stock', 'Out of Stock']
+
+  - name: dim_users
+    description: Cleaned user dimension
+    columns:
+      - name: user_id
+        tests:
+          - unique
+          - not_null
+      - name: email
+        tests:
+          - unique
+          - not_null
+      - name: gender
+        tests:
+          - accepted_values:
+              values: ['male', 'female']
+
+  - name: fct_carts
+    description: One row per cart
+    columns:
+      - name: cart_id
+        tests:
+          - unique
+          - not_null
+      - name: user_id
+        tests:
+          - not_null
+      - name: total
+        tests:
+          - not_null
+
+  - name: fct_cart_items
+    description: One row per line item
+    columns:
+      - name: cart_id
+        tests:
+          - not_null
+      - name: product_id
+        tests:
+          - not_null
+      - name: quantity
+        tests:
+          - not_null
+
+  - name: product_reviews
+    description: One row per review
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+      - name: rating
+        tests:
+          - not_null
+          - accepted_values:
+              values: [1, 2, 3, 4, 5]
+      - name: reviewer_name
+        tests:
+          - not_null
