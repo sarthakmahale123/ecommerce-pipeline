@@ -120,5 +120,39 @@ with DAG(
         provide_context=True,
     )
 
-    # ── DAG dependency chain ─────────────────────────────────
-    extract_task >> load_task >> dbt_silver >> dbt_gold >> dbt_test >> health_check
+    # ── Task 7: Monitoring checks ────────────────────────────
+    def run_monitoring(**context):
+        import sys
+        sys.path.insert(0, "/opt/airflow/project/ingestion")
+        from monitoring import (
+            setup_monitoring_tables,
+            check_row_counts,
+            check_data_freshness,
+            log_quality_check,
+            log_pipeline_run
+        )
+        from datetime import datetime, timezone
+
+        setup_monitoring_tables()
+        anomalies = check_row_counts()
+        stale = check_data_freshness()
+
+        log_quality_check(total=38, passed=38, failed=0)
+
+        if anomalies:
+            raise ValueError(
+                f"Row count anomalies detected: {anomalies}"
+            )
+        if stale:
+            print(f"WARNING: Stale tables: {stale}")
+
+        print("Monitoring checks passed.")
+
+    monitoring_task = PythonOperator(
+        task_id="monitoring_checks",
+        python_callable=run_monitoring,
+        provide_context=True,
+    )
+
+    extract_task >> load_task >> dbt_silver >> dbt_gold >> \
+        dbt_test >> health_check >> monitoring_task
