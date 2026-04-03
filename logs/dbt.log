@@ -1,0 +1,16 @@
+[0m11:49:57.231700 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002231FFA6F90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002231FF3D2D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002231FF3E550>]}
+[0m11:49:57.236992 [debug] [MainThread]: An error was encountered while trying to send an event
+
+
+============================== 11:49:57.240519 | 0d251322-6391-4fec-bbe5-e6121efec3d6 ==============================
+[0m11:49:57.240519 [info ] [MainThread]: Running with dbt=1.11.7
+[0m11:49:57.240519 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\Sarthak Mahale\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'use_colors': 'True', 'invocation_command': 'dbt test', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m11:49:57.240519 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\Sarthak Mahale\Desktop\ecommerce-pipeline\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m11:49:57.245061 [debug] [MainThread]: Command `dbt test` failed at 11:49:57.245061 after 0.16 seconds
+[0m11:49:57.245061 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000223191EEF50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000223191EECD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002231FF36FD0>]}
+[0m11:49:57.245061 [debug] [MainThread]: An error was encountered while trying to send an event
+[0m11:49:57.245061 [debug] [MainThread]: Flushing usage events
